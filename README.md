@@ -30,7 +30,11 @@ Usage of ./RestServer:
         Listen on defined port. (default 9195)
 ```
 
-## Sample Asynchronous API Call (no callback)
+## API
+
+*POST* method: Asynchronous request callback after delay.
+
+*GET* method: Synchronous response delay.
 
 **Method:**
 POST, GET 
@@ -45,7 +49,7 @@ POST, GET
 | seconds  | seconds to sleep before callback function is called | 
 | filename | name of the file in the root directory to serve immediately as response | 
 
-**Request Body**
+**Request Body (only POST)**
 
 A JSON object with the following properties:
 
@@ -57,7 +61,7 @@ A JSON object with the following properties:
 
 **Result**
 
-> POST
+> sample POST result
 
 Returns immediately the "filename" in the same directory of the executable.
 Then after *seconds* sleep is expired, a POST request to *url* with *body* is made.
